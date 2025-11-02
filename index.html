@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RzyMar AI</title>
-  <meta name="description" content="RzyMar AI: Automate your content, grow smarter, and generate leads effortlessly with advanced AI tools.">
+  <meta name="description"
+    content="RzyMar AI: Automate your content, grow smarter, and generate leads effortlessly with advanced AI tools.">
   <meta property="og:title" content="RzyMar AI - Your Growth Partner">
-  <meta property="og:description" content="Automate your content, grow smarter, and generate leads effortlessly with RzyMar AI.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&h=450&q=80">
+  <meta property="og:description"
+    content="Automate your content, grow smarter, and generate leads effortlessly with RzyMar AI.">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&h=450&q=80">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2899/2899584.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --neon-cyan: #00fff0;
@@ -20,22 +25,23 @@
       --neon-purple: #9b00ff;
       --bg-color: #0d0f1a;
       --bg-gradient: linear-gradient(135deg, #0d0f1a, #001f27);
-      --panel-bg: rgba(0,0,0,0.68);
+      --panel-bg: rgba(0, 0, 0, 0.68);
       --text-light: #e0f7fa;
       --text-muted: #b2fff0;
       --white: #fff;
       --border-radius: 18px;
-      --shadow: 0 0 30px rgba(0,255,240,0.15);
-      --transition: 0.28s cubic-bezier(.65,0,.35,1);
+      --shadow: 0 0 30px rgba(0, 255, 240, 0.15);
+      --transition: 0.28s cubic-bezier(.65, 0, .35, 1);
       --font-main: 'Inter', sans-serif;
       --panel-max-width: 1100px;
       --container-max-width: 1250px;
-      --table-th-bg: rgba(0,0,0,0.87);
+      --table-th-bg: rgba(0, 0, 0, 0.87);
       --table-th-color: #00fff0;
-      --table-td-bg: rgba(0,0,0,0.43);
+      --table-td-bg: rgba(0, 0, 0, 0.43);
       --table-td-color: #b2fff0;
       --table-border: #00fff0;
     }
+
     html[data-theme="light"] {
       --neon-cyan: #00bcd4;
       --neon-blue: #3f51b5;
@@ -46,15 +52,24 @@
       --text-light: #0a3446;
       --text-muted: #01579b;
       --white: #1c2230;
-      --shadow: 0 0 20px rgba(0,188,212,0.09);
+      --shadow: 0 0 20px rgba(0, 188, 212, 0.09);
       --table-th-bg: #e8f4fa;
       --table-th-color: #01579b;
       --table-td-bg: #f6fcff;
       --table-td-color: #01579b;
       --table-border: #00bcd4;
     }
-    html { box-sizing: border-box; }
-    *, *:before, *:after { box-sizing: inherit; }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
     body {
       background: var(--bg-gradient);
       color: var(--text-light);
@@ -70,24 +85,46 @@
       scroll-behavior: smooth;
       transition: background 0.3s, color 0.3s;
     }
-    main { display: block; }
-    a { color: var(--neon-cyan); text-decoration: none; transition: color 0.2s; }
-    a:hover, a:focus { color: var(--white); text-shadow: 0 0 8px var(--neon-cyan); outline: none;}
-    h1, h2, h3,
-    .hero-title, .hero-subtitle {
+
+    main {
+      display: block;
+    }
+
+    a {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--white);
+      text-shadow: 0 0 8px var(--neon-cyan);
+      outline: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    .hero-title,
+    .hero-subtitle {
       text-align: center;
       display: block;
       width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
       font-family: var(--font-main);
       font-weight: 800;
       color: var(--neon-cyan);
       text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-blue);
       letter-spacing: 0.5px;
     }
+
     .hero-title {
       font-size: 5.3rem;
       font-weight: 900;
@@ -97,10 +134,11 @@
       text-shadow:
         0 2px 20px var(--neon-cyan),
         0 0 36px var(--neon-blue),
-        0 1px 0 rgba(0,0,0,0.17);
+        0 1px 0 rgba(0, 0, 0, 0.17);
       line-height: 1.08;
       transition: color 0.3s, text-shadow 0.3s;
     }
+
     .hero-subtitle {
       font-size: 2rem;
       font-style: italic;
@@ -111,24 +149,37 @@
       letter-spacing: 0.14em;
       transition: color 0.3s, text-shadow 0.3s;
     }
+
     html[data-theme="light"] .hero-title,
     html[data-theme="light"] .hero-subtitle,
     html[data-theme="light"] h2,
     html[data-theme="light"] h3 {
       color: #01579b !important;
       text-shadow:
-        0 2px 16px rgba(0,0,0,0.13),
+        0 2px 16px rgba(0, 0, 0, 0.13),
         0 1px 0 #b3e5fc;
       letter-spacing: 2px;
     }
-    h1 { font-size: 4.4rem; line-height: 1.07; }
-    h2 { font-size: 2.3rem; }
-    h3 { font-size: 1.4rem; }
+
+    h1 {
+      font-size: 4.4rem;
+      line-height: 1.07;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
     .hero-intro {
       max-width: 700px;
       margin: 0 auto 0 auto;
       text-align: center;
     }
+
     .hero-lead {
       font-size: 1.45rem;
       color: var(--neon-cyan);
@@ -139,10 +190,12 @@
       text-shadow: 0 0 8px var(--neon-cyan);
       transition: color 0.3s, text-shadow 0.3s;
     }
+
     html[data-theme="light"] .hero-lead {
       color: #01579b;
       text-shadow: 0 1px 0 #b3e5fc;
     }
+
     .hero-desc {
       font-size: 1.15rem;
       color: var(--text-muted);
@@ -152,18 +205,21 @@
       line-height: 1.7;
       letter-spacing: 0.01em;
     }
+
     .hero img {
-      width: 100%; max-width: 700px;
+      width: 100%;
+      max-width: 700px;
       margin: 28px auto 0 auto;
       border-radius: var(--border-radius);
-      box-shadow: 0 10px 30px rgba(0,255,240,0.27);
+      box-shadow: 0 10px 30px rgba(0, 255, 240, 0.27);
       display: block;
     }
+
     nav {
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.85);
       border-bottom: 2px solid var(--neon-cyan);
       z-index: 1000;
       padding: 10px 0 6px 0;
@@ -171,8 +227,9 @@
       align-items: center;
       transition: background 0.2s;
       backdrop-filter: blur(5px);
-      box-shadow: 0 2px 16px rgba(0,255,240,0.13), 0 1px 0 #00fff0;
+      box-shadow: 0 2px 16px rgba(0, 255, 240, 0.13), 0 1px 0 #00fff0;
     }
+
     .nav-links {
       display: flex;
       gap: 16px;
@@ -180,10 +237,12 @@
       justify-content: center;
       flex: 1 1 auto;
     }
+
     html[data-theme="light"] nav {
-      background: rgba(255,255,255,0.98);
+      background: rgba(255, 255, 255, 0.98);
       border-bottom: 2px solid var(--neon-cyan);
     }
+
     nav a {
       margin: 0 10px;
       font-weight: 600;
@@ -197,16 +256,20 @@
       box-shadow: none;
       white-space: nowrap;
     }
-    nav a.active, nav a:focus-visible {
+
+    nav a.active,
+    nav a:focus-visible {
       color: var(--white);
       background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue));
       text-shadow: 0 0 10px var(--neon-cyan);
       border-bottom: 3px solid var(--neon-blue);
     }
+
     nav a:focus {
       outline: 2px solid var(--neon-cyan);
       outline-offset: 2px;
     }
+
     #theme-toggle {
       margin-left: auto;
       align-self: center;
@@ -214,32 +277,40 @@
       color: var(--bg-color);
       border: none;
       border-radius: 50%;
-      width: 40px; height: 40px;
-      display: flex; align-items: center; justify-content: center;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.3rem;
       cursor: pointer;
       box-shadow: 0 0 10px var(--neon-cyan);
       transition: background 0.2s, box-shadow 0.2s, color 0.2s;
     }
-    #theme-toggle:hover, #theme-toggle:focus {
+
+    #theme-toggle:hover,
+    #theme-toggle:focus {
       background: var(--neon-blue);
       color: var(--white);
       box-shadow: 0 0 18px var(--neon-blue), 0 0 7px var(--neon-cyan);
       outline: 2px solid var(--neon-blue);
       outline-offset: 1px;
     }
+
     @media (max-width: 650px) {
       nav {
         flex-direction: column;
         align-items: stretch;
         padding: 5px 0;
       }
+
       .nav-links {
         flex-direction: row;
         justify-content: center;
         gap: 6px;
         margin-bottom: 6px;
       }
+
       #theme-toggle {
         margin: 0 auto 5px auto;
         width: 36px;
@@ -247,57 +318,87 @@
         font-size: 1.1rem;
       }
     }
+
     .container {
       max-width: var(--container-max-width);
       margin: 30px auto 0 auto;
       padding: 0 20px;
     }
+
     #particle-canvas {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: 0;
       pointer-events: none;
     }
-    body > *:not(#particle-canvas) {
+
+    body>*:not(#particle-canvas) {
       position: relative;
       z-index: 1;
     }
-    .panel, .combined-panel > .panel, .features-grid .feature, .pricing .card {
+
+    .panel,
+    .combined-panel>.panel,
+    .features-grid .feature,
+    .pricing .card {
       background: var(--panel-bg);
       border-radius: var(--border-radius);
       border: 1.5px solid var(--neon-cyan);
-      box-shadow: var(--shadow), 0 0 30px rgba(0,255,240,0.12);
+      box-shadow: var(--shadow), 0 0 30px rgba(0, 255, 240, 0.12);
       transition: transform var(--transition), box-shadow var(--transition), background 0.3s, color 0.3s;
       text-align: center;
       font-size: 1.07rem;
       position: relative;
       overflow: hidden;
     }
-    .panel, .combined-panel > .panel { padding: 42px 42px 38px 42px; margin: 38px auto; max-width: var(--panel-max-width);}
-    .panel:hover, .combined-panel > .panel:hover, .features-grid .feature:hover, .pricing .card:hover {
+
+    .panel,
+    .combined-panel>.panel {
+      padding: 42px 42px 38px 42px;
+      margin: 38px auto;
+      max-width: var(--panel-max-width);
+    }
+
+    .panel:hover,
+    .combined-panel>.panel:hover,
+    .features-grid .feature:hover,
+    .pricing .card:hover {
       transform: translateY(-5px) scale(1.018);
-      box-shadow: 0 20px 44px rgba(0,255,240,0.33), 0 0 40px var(--neon-cyan), 0 0 100px var(--neon-blue);
+      box-shadow: 0 20px 44px rgba(0, 255, 240, 0.33), 0 0 40px var(--neon-cyan), 0 0 100px var(--neon-blue);
       animation: glow 2.5s infinite alternate;
       z-index: 2;
     }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 32px;
       margin-top: 30px;
     }
+
     .features-grid .feature {
       padding: 32px 26px 25px 26px;
       font-size: 1.03rem;
     }
+
     .features-grid .feature img.icon {
-      width: 70px; height: 70px; margin-bottom: 15px;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
       filter: drop-shadow(0 0 16px var(--neon-cyan));
       border-radius: 18px;
       animation: glow 2.5s infinite alternate;
     }
-    .features-grid .feature h3 { font-size: 1.21rem; color: var(--neon-cyan); font-weight: 700; }
+
+    .features-grid .feature h3 {
+      font-size: 1.21rem;
+      color: var(--neon-cyan);
+      font-weight: 700;
+    }
+
     table {
       width: 100%;
       margin: 30px auto 20px auto;
@@ -305,12 +406,14 @@
       border-spacing: 0;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 0 15px rgba(0,255,240,0.12);
+      box-shadow: 0 0 15px rgba(0, 255, 240, 0.12);
       background: var(--panel-bg);
       font-size: 1.05rem;
       table-layout: fixed;
     }
-    th, td {
+
+    th,
+    td {
       padding: 15px 14px;
       text-align: left;
       border: none;
@@ -318,37 +421,69 @@
       font-size: 1.14rem;
       word-break: break-word;
     }
+
     th {
       background: var(--table-th-bg);
       color: var(--table-th-color);
       font-weight: 700;
       border-bottom: 2px solid var(--table-border);
     }
+
     td {
       background: var(--table-td-bg);
       color: var(--table-td-color);
       font-weight: 500;
       border-bottom: 1px solid var(--table-border);
     }
-    tr:last-child td { border-bottom: none; }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
     tr:nth-child(even) td {
       background: var(--panel-bg);
       color: var(--table-td-color);
     }
-    table, th, td { border-radius: 0; }
-    @media(max-width:700px){
-      table, thead, tbody, tr, th, td { display: block; width: 100%; }
-      thead tr { position: absolute; top: -9999px; left: -9999px;}
-      tr { margin: 0 0 20px 0; }
+
+    table,
+    th,
+    td {
+      border-radius: 0;
+    }
+
+    @media(max-width:700px) {
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        margin: 0 0 20px 0;
+      }
+
       td {
         border: none;
         position: relative;
         padding-left: 52%;
         min-height: 47px;
       }
+
       td:before {
         position: absolute;
-        top: 0; left: 10px;
+        top: 0;
+        left: 10px;
         width: 50%;
         padding-right: 18px;
         white-space: nowrap;
@@ -358,49 +493,73 @@
         content: attr(data-label);
       }
     }
-    .cta, .neon-btn {
+
+    .cta,
+    .neon-btn {
       display: inline-block;
       margin-top: 15px;
       padding: 14px 34px;
-      background: linear-gradient(135deg,var(--neon-cyan),var(--neon-purple),var(--neon-blue));
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-blue));
       color: var(--bg-color);
       font-weight: 700;
       letter-spacing: 0.5px;
       border: none;
       border-radius: 14px;
-      box-shadow: 0 0 20px rgba(0,255,240,0.18);
-      transition: all 0.18s cubic-bezier(.59,0,.45,1);
+      box-shadow: 0 0 20px rgba(0, 255, 240, 0.18);
+      transition: all 0.18s cubic-bezier(.59, 0, .45, 1);
       text-decoration: none;
       animation: ctaGlow 2.2s infinite alternate;
       font-size: 1.12rem;
       outline: none;
       cursor: pointer;
     }
-    .cta:hover, .cta:focus, .neon-btn:hover, .neon-btn:focus {
+
+    .cta:hover,
+    .cta:focus,
+    .neon-btn:hover,
+    .neon-btn:focus {
       transform: scale(1.055) translateY(-3px);
-      box-shadow: 0 0 35px rgba(0,255,240,0.7);
+      box-shadow: 0 0 35px rgba(0, 255, 240, 0.7);
       color: var(--white);
       outline: 2px solid var(--neon-blue);
     }
-    .cta:active, .neon-btn:active { filter: brightness(0.93); transform: scale(0.97);}
+
+    .cta:active,
+    .neon-btn:active {
+      filter: brightness(0.93);
+      transform: scale(0.97);
+    }
+
     .pricing {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(295px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
       gap: 32px;
       margin-top: 30px;
       text-align: center;
     }
+
     .pricing .card {
       padding: 32px 25px;
       font-size: 1.06rem;
       z-index: 1;
     }
+
     .pricing .card img {
-      width: 100%; max-height: 180px; object-fit: cover;
-      border-radius: 12px; margin-bottom: 15px;
-      box-shadow: 0 5px 15px rgba(0,255,240,0.15);
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0, 255, 240, 0.15);
     }
-    .pricing .card .price { font-size: 1.45rem; font-weight: 700; margin: 10px 0; color: var(--neon-cyan);}
+
+    .pricing .card .price {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 10px 0;
+      color: var(--neon-cyan);
+    }
+
     .combined-panel {
       display: flex;
       gap: 32px;
@@ -410,18 +569,23 @@
       max-width: 1200px;
       margin: 60px auto;
     }
-    .combined-panel > div {
-      flex: 1 1 400px; min-width: 300px;
+
+    .combined-panel>div {
+      flex: 1 1 400px;
+      min-width: 300px;
       padding: 32px 22px 27px 22px;
       font-size: 1.04rem;
       margin-bottom: 10px;
     }
+
     .combined-panel img {
-      width: 90%; max-width: 300px;
+      width: 90%;
+      max-width: 300px;
       margin-bottom: 20px;
       border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,255,240,0.18);
+      box-shadow: 0 10px 20px rgba(0, 255, 240, 0.18);
     }
+
     form label {
       font-family: var(--font-main);
       font-size: 1rem;
@@ -431,19 +595,21 @@
       letter-spacing: 0.01em;
       display: block;
     }
+
     .form-group {
       width: 100%;
       max-width: 350px;
       margin-bottom: 10px;
       text-align: left;
     }
+
     .neon-input {
       width: 100%;
       max-width: 100%;
       padding: 16px 20px;
       border-radius: 12px;
       border: 2px solid var(--neon-cyan);
-      background: rgba(0,0,0,0.95);
+      background: rgba(0, 0, 0, 0.95);
       color: var(--text-light);
       font-size: 1rem;
       font-family: var(--font-main);
@@ -453,11 +619,13 @@
       transition: border-color 0.2s, background 0.2s, color 0.2s;
       outline: none;
     }
+
     .neon-input:focus {
       border-color: var(--neon-blue);
       outline: 2px solid var(--neon-blue);
-      background: rgba(0,0,0,1);
+      background: rgba(0, 0, 0, 1);
     }
+
     .neon-input::placeholder {
       color: var(--text-muted);
       opacity: 1;
@@ -467,343 +635,467 @@
       letter-spacing: 0.01em;
       text-shadow: none;
     }
+
     .neon-input.select {
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      background: rgba(0,0,0,0.95) url('data:image/svg+xml;utf8,<svg fill="%2300fff0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 16px center;
+      background: rgba(0, 0, 0, 0.95) url('data:image/svg+xml;utf8,<svg fill="%2300fff0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 16px center;
       background-size: 16px;
       padding-right: 50px;
       cursor: pointer;
     }
+
     @keyframes glow {
-      0% { box-shadow:0 0 8px var(--neon-cyan),0 0 12px var(--neon-cyan);}
-      50% { box-shadow:0 0 18px var(--neon-cyan),0 0 36px var(--neon-blue);}
-      100% { box-shadow:0 0 8px var(--neon-cyan),0 0 12px var(--neon-cyan);}
+      0% {
+        box-shadow: 0 0 8px var(--neon-cyan), 0 0 12px var(--neon-cyan);
+      }
+
+      50% {
+        box-shadow: 0 0 18px var(--neon-cyan), 0 0 36px var(--neon-blue);
+      }
+
+      100% {
+        box-shadow: 0 0 8px var(--neon-cyan), 0 0 12px var(--neon-cyan);
+      }
     }
+
     @keyframes ctaGlow {
-      0% { box-shadow:0 0 10px rgba(0,255,240,0.22); transform:translateY(0) scale(1);}
-      50% { box-shadow:0 0 20px rgba(0,255,240,0.3); transform:translateY(-2px) scale(1.018);}
-      100% { box-shadow:0 0 10px rgba(0,255,240,0.22); transform:translateY(0) scale(1);}
+      0% {
+        box-shadow: 0 0 10px rgba(0, 255, 240, 0.22);
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(0, 255, 240, 0.3);
+        transform: translateY(-2px) scale(1.018);
+      }
+
+      100% {
+        box-shadow: 0 0 10px rgba(0, 255, 240, 0.22);
+        transform: translateY(0) scale(1);
+      }
     }
-    a:focus, .cta:focus, .neon-btn:focus, .neon-input:focus {
+
+    a:focus,
+    .cta:focus,
+    .neon-btn:focus,
+    .neon-input:focus {
       outline: 2px solid var(--neon-blue);
       outline-offset: 2px;
       box-shadow: 0 0 10px var(--neon-cyan);
     }
-    @media(max-width:900px){
-      .hero-title { font-size:2.2rem;}
-      .container { margin-top:16px;}
-      .panel, .features-grid, .pricing, .flow, .combined-panel { text-align:center; flex-direction:column; }
-      .panel, .combined-panel > div { padding: 20px 8px 18px 8px;}
-      .combined-panel { padding: 0 0 0 0;}
-      table, .panel, .pricing, .features-grid { font-size: 0.97rem;}
+
+    @media(max-width:900px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        margin-top: 16px;
+      }
+
+      .panel,
+      .features-grid,
+      .pricing,
+      .flow,
+      .combined-panel {
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .panel,
+      .combined-panel>div {
+        padding: 20px 8px 18px 8px;
+      }
+
+      .combined-panel {
+        padding: 0 0 0 0;
+      }
+
+      table,
+      .panel,
+      .pricing,
+      .features-grid {
+        font-size: 0.97rem;
+      }
     }
-    @media(max-width:600px){
-      .hero-title { font-size:1.35rem;}
-      .hero-subtitle { font-size:1.01rem;}
-      .panel, .combined-panel > div { padding: 8px !important; }
-      .features-grid, .pricing { gap: 12px;}
+
+    @media(max-width:600px) {
+      .hero-title {
+        font-size: 1.35rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.01rem;
+      }
+
+      .panel,
+      .combined-panel>div {
+        padding: 8px !important;
+      }
+
+      .features-grid,
+      .pricing {
+        gap: 12px;
+      }
     }
   </style>
 </head>
+
 <body>
-<canvas id="particle-canvas"></canvas>
-<nav aria-label="Main Navigation">
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
-    <span id="theme-icon" aria-hidden="true">🌙</span>
-  </button>
-</nav>
-<main>
-  <!-- Hero Section -->
-  <section class="hero container" id="hero">
-    <div class="hero-title">RzyMar AI</div>
-    <div class="hero-subtitle"><em>Your Growth Partner That Never Sleeps</em></div>
-    <div class="hero-intro">
-      <p class="hero-lead">Grow Smarter. Sleep Better. Amplify Effortlessly.</p>
-      <p class="hero-desc">RzyMar AI isn’t just automation — it’s evolution. It’s your always-on growth partner that learns your voice, connects every platform, and turns your ideas into consistent, measurable growth. You focus on your vision — RzyMar handles the rest. 🚀</p>
+  <canvas id="particle-canvas"></canvas>
+  <nav aria-label="Main Navigation">
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&h=450&q=80" alt="AI Growth Concept" loading="lazy">
-  </section>
-  <!-- Features Section -->
-  <section class="container panel" id="features">
-    <h2>❌ Problems We Solve</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Problem</th>
-          <th>Impact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Problem">⏰ Time-consuming multi-platform posting</td>
-          <td data-label="Impact">Hours lost each week managing LinkedIn, X, Instagram, TikTok, Facebook</td>
-        </tr>
-        <tr>
-          <td data-label="Problem">🌀 Inconsistent branding & tone</td>
-          <td data-label="Impact">Reduces credibility and engagement</td>
-        </tr>
-        <tr>
-          <td data-label="Problem">💔 Missed lead opportunities</td>
-          <td data-label="Impact">Manual tracking is slow and inefficient</td>
-        </tr>
-        <tr>
-          <td data-label="Problem">🔄 Content repurposing hassles</td>
-          <td data-label="Impact">Turning one post into multiple formats is tedious</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>💡 Our Solution: RzyMar AI</h2>
-    <div class="features-grid">
-      <div class="feature" tabindex="0">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2899/2899584.png" alt="Autopilot Icon" loading="lazy">
-        <h3>1️⃣ Put Your Growth on Autopilot 🧠</h3>
-        <p>RzyMar builds your brand while you rest, publishing automatically across LinkedIn, X, Instagram, TikTok, and Facebook. Adapts your tone authentically for each platform and keeps your brand active — no missed posts, no burnout.</p>
-        <p><strong>Example:</strong> You post a LinkedIn article. Instantly, RzyMar creates an X thread, designs an Instagram carousel, and generates TikTok & Facebook video snippets.</p>
+    <button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </nav>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container" id="hero">
+      <div class="hero-title">RzyMar AI</div>
+      <div class="hero-subtitle"><em>Your Growth Partner That Never Sleeps</em></div>
+      <div class="hero-intro">
+        <p class="hero-lead">Grow Smarter. Sleep Better. Amplify Effortlessly.</p>
+        <p class="hero-desc">RzyMar AI isn’t just automation — it’s evolution. It’s your always-on growth partner that
+          learns your voice, connects every platform, and turns your ideas into consistent, measurable growth. You focus
+          on your vision — RzyMar handles the rest. 🚀</p>
       </div>
-      <div class="feature" tabindex="0">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910761.png" alt="Content Repurposing Icon" loading="lazy">
-        <h3>2️⃣ Intelligent Content Repurposing 🔄</h3>
-        <p>Create once. Be everywhere. Turn a 10-min video into short Reels/TikToks with subtitles, hooks & hashtags. Convert transcripts into LinkedIn articles, X threads, newsletters, and more.</p>
+      <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=800&h=450&q=80"
+        alt="AI Growth Concept" loading="lazy">
+    </section>
+    <!-- Features Section -->
+    <section class="container panel" id="features">
+      <h2>❌ Problems We Solve</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Problem">⏰ Time-consuming multi-platform posting</td>
+            <td data-label="Impact">Hours lost each week managing LinkedIn, X, Instagram, TikTok, Facebook</td>
+          </tr>
+          <tr>
+            <td data-label="Problem">🌀 Inconsistent branding & tone</td>
+            <td data-label="Impact">Reduces credibility and engagement</td>
+          </tr>
+          <tr>
+            <td data-label="Problem">💔 Missed lead opportunities</td>
+            <td data-label="Impact">Manual tracking is slow and inefficient</td>
+          </tr>
+          <tr>
+            <td data-label="Problem">🔄 Content repurposing hassles</td>
+            <td data-label="Impact">Turning one post into multiple formats is tedious</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>💡 Our Solution: RzyMar AI</h2>
+      <div class="features-grid">
+        <div class="feature" tabindex="0">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2899/2899584.png" alt="Autopilot Icon"
+            loading="lazy">
+          <h3>1️⃣ Put Your Growth on Autopilot 🧠</h3>
+          <p>RzyMar builds your brand while you rest, publishing automatically across LinkedIn, X, Instagram, TikTok,
+            and Facebook. Adapts your tone authentically for each platform and keeps your brand active — no missed
+            posts, no burnout.</p>
+          <p><strong>Example:</strong> You post a LinkedIn article. Instantly, RzyMar creates an X thread, designs an
+            Instagram carousel, and generates TikTok & Facebook video snippets.</p>
+        </div>
+        <div class="feature" tabindex="0">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910761.png" alt="Content Repurposing Icon"
+            loading="lazy">
+          <h3>2️⃣ Intelligent Content Repurposing 🔄</h3>
+          <p>Create once. Be everywhere. Turn a 10-min video into short Reels/TikToks with subtitles, hooks & hashtags.
+            Convert transcripts into LinkedIn articles, X threads, newsletters, and more.</p>
+        </div>
+        <div class="feature" tabindex="0">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910737.png" alt="Lead Generation Icon"
+            loading="lazy">
+          <h3>3️⃣ AI-Driven Lead Generation 🤖</h3>
+          <p>Turn engagement into genuine opportunities automatically. Detects high-engagement users, flags warm
+            prospects, drafts personalised messages in your voice, and syncs with CRM.</p>
+        </div>
       </div>
-      <div class="feature" tabindex="0">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2910/2910737.png" alt="Lead Generation Icon" loading="lazy">
-        <h3>3️⃣ AI-Driven Lead Generation 🤖</h3>
-        <p>Turn engagement into genuine opportunities automatically. Detects high-engagement users, flags warm prospects, drafts personalised messages in your voice, and syncs with CRM.</p>
+    </section>
+    <!-- Pricing Section -->
+    <section class="container" id="pricing">
+      <h2>Pricing Plans 💰</h2>
+      <div class="pricing">
+        <div class="card" tabindex="0">
+          <h3>Basic 🟢</h3>
+          <p class="price">$29/mo</p>
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&h=900&q=80"
+            alt="Basic Plan" loading="lazy">
+          <ul>
+            <li>✅ 1 Social Account</li>
+            <li>✅ Adaptive Posting</li>
+            <li>✅ Intelligent Content Repurposing</li>
+            <li>✅ Basic Analytics</li>
+            <li>✅ Email Support</li>
+          </ul>
+          <a href="#contact" class="cta">Start Basic</a>
+        </div>
+        <div class="card" tabindex="0">
+          <h3>Pro 🚀</h3>
+          <p class="price">$79/mo</p>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&h=900&q=80"
+            alt="Pro Plan" loading="lazy">
+          <ul>
+            <li>✅ Up to 5 Social Accounts</li>
+            <li>✅ AI‑Driven Posting & Engagement</li>
+            <li>✅ Advanced Content Repurposing</li>
+            <li>✅ Lead Generation Automation</li>
+            <li>✅ Priority Email Support</li>
+          </ul>
+          <a href="#contact" class="cta">Start Pro</a>
+        </div>
+        <div class="card" tabindex="0">
+          <h3>Enterprise 🌟</h3>
+          <p class="price">Custom Pricing</p>
+          <img src="https://images.unsplash.com/photo-1709715357520-5e1047a2b691?auto=format&fit=crop&w=1600&h=900&q=80"
+            alt="Enterprise Plan" loading="lazy">
+          <ul>
+            <li>✅ Unlimited Social Accounts</li>
+            <li>✅ Full AI Automation Suite</li>
+            <li>✅ Custom Content Strategy</li>
+            <li>✅ Personalised Lead Nurturing</li>
+            <li>✅ 24/7 Support & Consultation</li>
+          </ul>
+          <a href="#contact" class="cta">Start Enterprise</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- Pricing Section -->
-  <section class="container" id="pricing">
-    <h2>Pricing Plans 💰</h2>
-    <div class="pricing">
-      <div class="card" tabindex="0">
-        <h3>Basic 🟢</h3>
-        <p class="price">$29/mo</p>
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&h=900&q=80" alt="Basic Plan" loading="lazy">
-        <ul>
-          <li>✅ 1 Social Account</li>
-          <li>✅ Adaptive Posting</li>
-          <li>✅ Intelligent Content Repurposing</li>
-          <li>✅ Basic Analytics</li>
-          <li>✅ Email Support</li>
-        </ul>
-        <a href="#contact" class="cta">Start Basic</a>
+    </section>
+    <!-- Combined Panels -->
+    <section class="combined-panel">
+      <!-- Contact Us Panel -->
+      <div class="panel combined-box" id="contact" tabindex="0">
+        <img src="https://degroote.mcmaster.ca/wp-content/uploads/sites/97/2024/06/In-the-News-AI-call-centre.png"
+          alt="AI Futuristic Contact Illustration" loading="lazy">
+        <h2>Contact Us 📩</h2>
+
+        <form id="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfgPFRn4KMbDnuQWLbU2T9Eo0i5aKD173tZho9zuYnyawZy_A/formResponse"
+          method="POST" aria-label="Contact form"
+          style="display:flex; flex-direction:column; gap:20px; align-items:center;">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="entry.59446901" required class="neon-input" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="entry.772332447" required class="neon-input" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="plan">Plan</label>
+            <select id="plan" name="entry.1390538947" required class="neon-input select">
+              <option value="" disabled selected>Select a Plan You’re Interested In</option>
+              <option value="Basic">Basic</option>
+              <option value="Pro">Pro</option>
+              <option value="Enterprise">Enterprise</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Any specific features or requirements?</label>
+            <textarea id="details" name="entry.1742795819" rows="4" class="neon-input"></textarea>
+          </div>
+
+          <button type="submit" class="neon-btn">Send Message</button>
+        </form>
+
+        <!-- Success message -->
+        <p id="form-success" style="display:none; color: var(--neon-cyan); font-weight:bold; margin-top:15px;">
+          ✅ Thank you! Your message has been sent.
+        </p>
       </div>
-      <div class="card" tabindex="0">
-        <h3>Pro 🚀</h3>
-        <p class="price">$79/mo</p>
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&h=900&q=80" alt="Pro Plan" loading="lazy">
-        <ul>
-          <li>✅ Up to 5 Social Accounts</li>
-          <li>✅ AI‑Driven Posting & Engagement</li>
-          <li>✅ Advanced Content Repurposing</li>
-          <li>✅ Lead Generation Automation</li>
-          <li>✅ Priority Email Support</li>
-        </ul>
-        <a href="#contact" class="cta">Start Pro</a>
+
+      <script>
+        // Handle form submission via AJAX
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const url = form.action;
+
+          fetch(url, {
+            method: 'POST',
+            body: data,
+            mode: 'no-cors' // Needed for Google Forms
+          })
+            .then(() => {
+              successMsg.style.display = 'block';
+              form.reset();
+            })
+            .catch(() => {
+              alert('⚠️ There was an issue sending your message.');
+            });
+        });
+
+        // Auto-fill plan from Pricing buttons
+        document.querySelectorAll('.pricing .cta').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.preventDefault();
+            const planText = btn.closest('.card').querySelector('h3').textContent.split(' ')[0]; // Extract plan name
+            document.getElementById('plan').value = planText;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      </script>
+
+
+      <!-- Grow Smarter Panel -->
+      <div class="panel combined-box" tabindex="0">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1493768157599-B8RYXE3FIIDB84KCTFYV/image-asset.jpeg?format=2500w"
+          alt="Growth Illustration - Plant in Soil" loading="lazy">
+        <h2>Grow Smarter. Sleep Better. Amplify Effortlessly.</h2>
+        <p>RzyMar AI doesn’t replace your creativity — it amplifies it. Your strategist, creative partner, and silent
+          growth engine — ensuring your ideas reach further, engage deeper, and convert faster.</p>
+        <a href="#contact" class="cta">Start growing on autopilot — the intelligent, human way</a>
       </div>
-      <div class="card" tabindex="0">
-        <h3>Enterprise 🌟</h3>
-        <p class="price">Custom Pricing</p>
-        <img src="https://images.unsplash.com/photo-1709715357520-5e1047a2b691?auto=format&fit=crop&w=1600&h=900&q=80" alt="Enterprise Plan" loading="lazy">
-        <ul>
-          <li>✅ Unlimited Social Accounts</li>
-          <li>✅ Full AI Automation Suite</li>
-          <li>✅ Custom Content Strategy</li>
-          <li>✅ Personalised Lead Nurturing</li>
-          <li>✅ 24/7 Support & Consultation</li>
-        </ul>
-        <a href="#contact" class="cta">Start Enterprise</a>
-      </div>
-    </div>
-  </section>
-  <!-- Combined Panels -->
-  <section class="combined-panel">
-    <!-- Contact Us Panel -->
-<div class="panel combined-box" id="contact" tabindex="0">
-  <img src="https://degroote.mcmaster.ca/wp-content/uploads/sites/97/2024/06/In-the-News-AI-call-centre.png"
-       alt="AI Futuristic Contact Illustration" loading="lazy">
-  <h2>Contact Us 📩</h2>
+    </section>
+  </main>
+  <script>
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray;
+    let darkParticleColor = 'rgba(0,255,240,0.65)';
+    let darkLineColor = (opacity) => `rgba(0,255,240,${opacity * 0.65})`;
+    let lightParticleColor = 'rgba(1,87,155,0.48)';
+    let lightLineColor = (opacity) => `rgba(1,87,155,${0.35 * opacity + 0.13})`;
+    let isLight = document.documentElement.getAttribute('data-theme') === 'light';
 
-  <form
-    action="https://docs.google.com/forms/d/e/1FAIpQLSfgPFRn4KMbDnuQWLbU2T9Eo0i5aKD173tZho9zuYnyawZy_A/formResponse"
-    method="POST"
-    target="_blank"
-    aria-label="Contact form"
-    style="display:flex; flex-direction:column; gap:20px; align-items:center;"
-  >
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="entry.59446901" required class="neon-input" autocomplete="name">
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="entry.772332447" required class="neon-input" autocomplete="email">
-    </div>
-
-    <div class="form-group">
-      <label for="plan">Plan</label>
-      <select id="plan" name="entry.1390538947" required class="neon-input select">
-        <option value="" disabled selected>Select a Plan You’re Interested In</option>
-        <option value="Basic">Basic</option>
-        <option value="Pro">Pro</option>
-        <option value="Enterprise">Enterprise</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="details">Any specific features or requirements?</label>
-      <textarea id="details" name="entry.1742795819" rows="4" class="neon-input"></textarea>
-    </div>
-
-    <button type="submit" class="neon-btn">Send Message</button>
-  </form>
-</div>
-
-    <!-- Grow Smarter Panel -->
-    <div class="panel combined-box" tabindex="0">
-      <img src="https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1493768157599-B8RYXE3FIIDB84KCTFYV/image-asset.jpeg?format=2500w" alt="Growth Illustration - Plant in Soil" loading="lazy">
-      <h2>Grow Smarter. Sleep Better. Amplify Effortlessly.</h2>
-      <p>RzyMar AI doesn’t replace your creativity — it amplifies it. Your strategist, creative partner, and silent growth engine — ensuring your ideas reach further, engage deeper, and convert faster.</p>
-      <a href="#contact" class="cta">Start growing on autopilot — the intelligent, human way</a>
-    </div>
-  </section>
-</main>
-<script>
-const canvas = document.getElementById('particle-canvas');
-const ctx = canvas.getContext('2d');
-let particlesArray;
-let darkParticleColor = 'rgba(0,255,240,0.65)';
-let darkLineColor = (opacity) => `rgba(0,255,240,${opacity*0.65})`;
-let lightParticleColor = 'rgba(1,87,155,0.48)';
-let lightLineColor = (opacity) => `rgba(1,87,155,${0.35*opacity+0.13})`;
-let isLight = document.documentElement.getAttribute('data-theme') === 'light';
-
-function getCurrentParticleColor() {
-  return isLight ? lightParticleColor : darkParticleColor;
-}
-function getCurrentLineColor(opacity) {
-  return isLight ? lightLineColor(opacity) : darkLineColor(opacity);
-}
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-class Particle {
-  constructor(x, y, size, speedX, speedY) {
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.speedX = speedX;
-    this.speedY = speedY;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if(this.x > canvas.width || this.x < 0) this.speedX *= -1;
-    if(this.y > canvas.height || this.y < 0) this.speedY *= -1;
-  }
-  draw() {
-    ctx.fillStyle = getCurrentParticleColor();
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-    ctx.fill();
-  }
-}
-function initParticles() {
-  particlesArray = [];
-  const numParticles = Math.floor(window.innerWidth / 11);
-  for(let i=0;i<numParticles;i++){
-    const size = Math.random()*2.2+1.1;
-    const x = Math.random()*canvas.width;
-    const y = Math.random()*canvas.height;
-    const speedX = (Math.random()-0.5)*0.37;
-    const speedY = (Math.random()-0.5)*0.37;
-    particlesArray.push(new Particle(x, y, size, speedX, speedY));
-  }
-}
-function connectParticles(){
-  let opacity;
-  for(let a=0;a<particlesArray.length;a++){
-    for(let b=a;b<particlesArray.length;b++){
-      let dx = particlesArray[a].x - particlesArray[b].x;
-      let dy = particlesArray[a].y - particlesArray[b].y;
-      let distance = Math.sqrt(dx*dx+dy*dy);
-      if(distance<105){
-        opacity = 1-(distance/110);
-        ctx.strokeStyle = getCurrentLineColor(opacity);
-        ctx.lineWidth = 1;
+    function getCurrentParticleColor() {
+      return isLight ? lightParticleColor : darkParticleColor;
+    }
+    function getCurrentLineColor(opacity) {
+      return isLight ? lightLineColor(opacity) : darkLineColor(opacity);
+    }
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    class Particle {
+      constructor(x, y, size, speedX, speedY) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.speedX = speedX;
+        this.speedY = speedY;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = getCurrentParticleColor();
         ctx.beginPath();
-        ctx.moveTo(particlesArray[a].x,particlesArray[a].y);
-        ctx.lineTo(particlesArray[b].x,particlesArray[b].y);
-        ctx.stroke();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
       }
     }
-  }
-}
-function animateParticles() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particlesArray.forEach(p => { p.update(); p.draw(); });
-  connectParticles();
-  requestAnimationFrame(animateParticles);
-}
-window.addEventListener('resize',()=>{resizeCanvas();initParticles();});
-resizeCanvas(); initParticles(); animateParticles();
+    function initParticles() {
+      particlesArray = [];
+      const numParticles = Math.floor(window.innerWidth / 11);
+      for (let i = 0; i < numParticles; i++) {
+        const size = Math.random() * 2.2 + 1.1;
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const speedX = (Math.random() - 0.5) * 0.37;
+        const speedY = (Math.random() - 0.5) * 0.37;
+        particlesArray.push(new Particle(x, y, size, speedX, speedY));
+      }
+    }
+    function connectParticles() {
+      let opacity;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let dx = particlesArray[a].x - particlesArray[b].x;
+          let dy = particlesArray[a].y - particlesArray[b].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 105) {
+            opacity = 1 - (distance / 110);
+            ctx.strokeStyle = getCurrentLineColor(opacity);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => { p.update(); p.draw(); });
+      connectParticles();
+      requestAnimationFrame(animateParticles);
+    }
+    window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+    resizeCanvas(); initParticles(); animateParticles();
 
-// Theme network color switcher
-function updateParticleTheme() {
-  isLight = document.documentElement.getAttribute('data-theme') === 'light';
-}
-document.addEventListener('DOMContentLoaded', () => { updateParticleTheme(); });
-const themeBtn = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-function setTheme(theme) {
-  if (theme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
-    themeIcon.textContent = '🌑';
-    localStorage.setItem('rzymar_theme', 'light');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    themeIcon.textContent = '🌙';
-    localStorage.setItem('rzymar_theme', 'dark');
-  }
-  updateParticleTheme();
-}
-themeBtn.addEventListener('click', () => {
-  const isLightNow = document.documentElement.getAttribute('data-theme') === 'light';
-  setTheme(isLightNow ? 'dark' : 'light');
-});
-(function() {
-  let theme = localStorage.getItem('rzymar_theme');
-  if (!theme) {
-    theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
-  }
-  setTheme(theme);
-})();
+    // Theme network color switcher
+    function updateParticleTheme() {
+      isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    }
+    document.addEventListener('DOMContentLoaded', () => { updateParticleTheme(); });
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(theme) {
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.textContent = '🌑';
+        localStorage.setItem('rzymar_theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('rzymar_theme', 'dark');
+      }
+      updateParticleTheme();
+    }
+    themeBtn.addEventListener('click', () => {
+      const isLightNow = document.documentElement.getAttribute('data-theme') === 'light';
+      setTheme(isLightNow ? 'dark' : 'light');
+    });
+    (function () {
+      let theme = localStorage.getItem('rzymar_theme');
+      if (!theme) {
+        theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      setTheme(theme);
+    })();
 
-// Active nav highlight on scroll
-const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-const sections = Array.from(document.querySelectorAll('main > section, .panel[id], .combined-panel'));
-function setActiveNav() {
-  let scrollPos = window.scrollY + 90;
-  let currentId = "";
-  for (let section of sections) {
-    if (section.offsetTop <= scrollPos) currentId = section.id || currentId;
-  }
-  navLinks.forEach(link => {
-    link.classList.toggle('active', currentId && link.getAttribute('href') === `#${currentId}`);
-  });
-}
-window.addEventListener('scroll', setActiveNav);
-window.addEventListener('DOMContentLoaded', setActiveNav);
-</script>
+    // Active nav highlight on scroll
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = Array.from(document.querySelectorAll('main > section, .panel[id], .combined-panel'));
+    function setActiveNav() {
+      let scrollPos = window.scrollY + 90;
+      let currentId = "";
+      for (let section of sections) {
+        if (section.offsetTop <= scrollPos) currentId = section.id || currentId;
+      }
+      navLinks.forEach(link => {
+        link.classList.toggle('active', currentId && link.getAttribute('href') === `#${currentId}`);
+      });
+    }
+    window.addEventListener('scroll', setActiveNav);
+    window.addEventListener('DOMContentLoaded', setActiveNav);
+  </script>
 </body>
+
 </html>
