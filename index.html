@@ -877,11 +877,12 @@
     <!-- Combined Panels -->
     <section class="combined-panel">
       <!-- Contact Us Panel -->
-      <div class="panel combined-box" id="contact" tabindex="0">
+      <div class="panel combined-box" id="contact" tabindex="0" style="position:relative;">
         <img src="https://degroote.mcmaster.ca/wp-content/uploads/sites/97/2024/06/In-the-News-AI-call-centre.png"
           alt="AI Futuristic Contact Illustration" loading="lazy">
         <h2>Contact Us 📩</h2>
 
+        <!-- Contact Form -->
         <form id="contact-form"
           action="https://docs.google.com/forms/d/e/1FAIpQLSfgPFRn4KMbDnuQWLbU2T9Eo0i5aKD173tZho9zuYnyawZy_A/formResponse"
           method="POST" aria-label="Contact form"
@@ -914,47 +915,125 @@
           <button type="submit" class="neon-btn">Send Message</button>
         </form>
 
-        <!-- Success message -->
-        <p id="form-success" style="display:none; color: var(--neon-cyan); font-weight:bold; margin-top:15px;">
-          ✅ Thank you! Your message has been sent.
-        </p>
+        <!-- Success Overlay Panel -->
+        <div id="custom-success" style="
+      display:none;
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.92);
+      color: var(--neon-cyan);
+      text-align:center;
+      padding-top:80px;
+      font-size:1.6rem;
+      border-radius: var(--border-radius);
+      z-index:99;
+      overflow:hidden;
+    ">
+          <div style="font-size:2.8rem; margin-bottom:10px;">✅ Success!</div>
+          <div>Your message has been sent to RzyMar AI.</div>
+          <button id="send-another" style="
+      margin-top:30px;
+      padding:14px 34px;
+      background: linear-gradient(135deg,var(--neon-cyan),var(--neon-purple),var(--neon-blue));
+      color: var(--bg-color);
+      font-weight:700;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      font-size:1.1rem;
+      box-shadow:0 0 20px rgba(0,255,240,0.18);
+      transition:0.2s;
+    ">Send Another Response</button>
+          <canvas id="confetti-canvas"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+        </div>
       </div>
 
       <script>
-        // Handle form submission via AJAX
+        // Form submission via AJAX to Google Forms
         const form = document.getElementById('contact-form');
-        const successMsg = document.getElementById('form-success');
+        const successPanel = document.getElementById('custom-success');
+        const sendAnotherBtn = document.getElementById('send-another');
+        const confettiCanvas = document.getElementById('confetti-canvas');
+        const confettiCtx = confettiCanvas.getContext('2d');
 
-        form.addEventListener('submit', function (e) {
+        function resizeCanvas() {
+          confettiCanvas.width = successPanel.offsetWidth;
+          confettiCanvas.height = successPanel.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Confetti {
+          constructor() {
+            this.x = Math.random() * confettiCanvas.width;
+            this.y = Math.random() * confettiCanvas.height - confettiCanvas.height;
+            this.size = Math.random() * 8 + 4;
+            this.speedY = Math.random() * 3 + 2;
+            this.color = `hsl(${Math.random() * 360},100%,65%)`;
+            this.angle = Math.random() * 360;
+            this.spin = Math.random() * 0.1 - 0.05;
+          }
+          update() {
+            this.y += this.speedY;
+            this.angle += this.spin;
+            if (this.y > confettiCanvas.height) this.y = -10;
+          }
+          draw() {
+            confettiCtx.save();
+            confettiCtx.translate(this.x, this.y);
+            confettiCtx.rotate(this.angle);
+            confettiCtx.fillStyle = this.color;
+            confettiCtx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+            confettiCtx.restore();
+          }
+        }
+
+        let confettiArray = [];
+        function initConfetti() {
+          confettiArray = [];
+          for (let i = 0; i < 150; i++) confettiArray.push(new Confetti());
+        }
+        function animateConfetti() {
+          confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+          confettiArray.forEach(c => { c.update(); c.draw(); });
+          requestAnimationFrame(animateConfetti);
+        }
+
+        // Form submit handler
+        form.addEventListener('submit', e => {
           e.preventDefault();
           const data = new FormData(form);
-          const url = form.action;
-
-          fetch(url, {
-            method: 'POST',
-            body: data,
-            mode: 'no-cors' // Needed for Google Forms
-          })
+          fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' })
             .then(() => {
-              successMsg.style.display = 'block';
-              form.reset();
+              successPanel.style.display = 'block';
+              form.style.display = 'none';
+              initConfetti();
+              animateConfetti();
             })
-            .catch(() => {
-              alert('⚠️ There was an issue sending your message.');
-            });
+            .catch(() => { alert('⚠️ There was an issue sending your message.'); });
+        });
+
+        // Send Another Response
+        sendAnotherBtn.addEventListener('click', () => {
+          successPanel.style.display = 'none';
+          form.style.display = 'flex';
+          form.reset();
+          confettiArray = [];
+          confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
         });
 
         // Auto-fill plan from Pricing buttons
         document.querySelectorAll('.pricing .cta').forEach(btn => {
           btn.addEventListener('click', e => {
             e.preventDefault();
-            const planText = btn.closest('.card').querySelector('h3').textContent.split(' ')[0]; // Extract plan name
+            const planText = btn.closest('.card').querySelector('h3').textContent.split(' ')[0];
             document.getElementById('plan').value = planText;
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
           });
         });
       </script>
-
 
       <!-- Grow Smarter Panel -->
       <div class="panel combined-box" tabindex="0">
