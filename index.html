@@ -620,6 +620,52 @@
       outline: none;
     }
 
+    /* Contact form adjustments for mobile-friendly scrolling */
+    #contact {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      max-height: 100vh;
+      /* fit viewport */
+      overflow: hidden;
+    }
+
+    #contact form {
+      max-height: 80vh;
+      /* allow scrolling inside form */
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      padding-right: 8px;
+      /* prevent scrollbar overlay */
+      scroll-behavior: smooth;
+    }
+
+    #contact .form-group {
+      flex-shrink: 0;
+      /* prevent shrinking when keyboard opens */
+    }
+
+    @media (max-width: 900px) {
+
+      #contact input,
+      #contact textarea,
+      #contact select {
+        font-size: 1rem;
+      }
+    }
+
+    #custom-success {
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 60px 20px 20px 20px;
+    }
+
+
     .neon-input:focus {
       border-color: var(--neon-blue);
       outline: 2px solid var(--neon-blue);
@@ -1015,14 +1061,26 @@
             .catch(() => { alert('⚠️ There was an issue sending your message.'); });
         });
 
-        // Send Another Response
+
+        // Smoothly scroll focused input into view on mobile
+        document.querySelectorAll('#contact-form input, #contact-form textarea, #contact-form select').forEach(el => {
+          el.addEventListener('focus', () => {
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300); // wait for mobile keyboard to appear
+          });
+        });
+
+        // Reset scroll when sending another response
         sendAnotherBtn.addEventListener('click', () => {
           successPanel.style.display = 'none';
           form.style.display = 'flex';
+          form.scrollTop = 0; // reset form scroll
           form.reset();
           confettiArray = [];
           confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
         });
+
 
         // Auto-fill plan from Pricing buttons
         document.querySelectorAll('.pricing .cta').forEach(btn => {
